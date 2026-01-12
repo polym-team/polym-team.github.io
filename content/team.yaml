@@ -55,7 +55,7 @@ techStack:
 members:
   - name: "임흥선"
     role: "Tech Lead"
-    bio: "풀스택 개발자. 복잡한 시스템을 단순하게 만드는 것을 좋아합니다."
+    bio: "대기업 출신. 전체적인 구조를 설계하고 프로젝트 총괄."
     avatar: "https://gravatar.com/avatar/41b0c59cf3ffbf6c9941073e7f0bfe9984723a615246b24ca4c05da353b8c2ae?size=256"
   - name: "박**"
     role: "Senior Engineer"
