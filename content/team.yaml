@@ -1,0 +1,81 @@
+# Polymorph Team Information
+
+# 팀 기본 정보
+team:
+  name: "Polymorph"
+  tagline: "기술로 비즈니스의 형태를 바꾸다"
+  description: "LG, 아모레퍼시픽, 배민 출신 시니어 개발자들이 만든 팀. 10년 이상의 실전 경험을 바탕으로, 복잡한 문제를 명쾌하게 해결합니다."
+  founded: "2018"
+
+# 팀의 핵심 가치
+values:
+  - title: "검증된 전문성"
+    description: "대기업과 빅테크에서 쌓은 실무 경험. 수많은 프로젝트를 통해 검증된 기술력으로 최적의 솔루션을 설계합니다."
+  - title: "근본적인 문제 해결"
+    description: "표면적 증상이 아닌 근본 원인을 파악합니다. 깊이 있는 분석으로 재발 없는 해결책을 제시합니다."
+  - title: "명확한 커뮤니케이션"
+    description: "기술적 복잡함을 명확한 언어로 전달합니다. 진행 상황과 이슈를 투명하게 공유합니다."
+
+# 서비스
+works:
+  - title: "웹/앱 개발"
+    description: "React, Vue, Node.js 등 모던 스택 기반의 확장 가능한 애플리케이션을 구축합니다."
+  - title: "레거시 시스템 개선"
+    description: "성능 병목 분석, 코드 리팩토링, 아키텍처 현대화로 기존 시스템의 가치를 높입니다."
+  - title: "기술 컨설팅"
+    description: "프로젝트 초기 설계부터 기술 스택 선정, 개발 프로세스 구축까지 함께합니다."
+
+# 운영 중인 앱/서비스
+apps:
+  - name: "크림 오피스"
+    description: "Kream(크림) Sold-out(솔드아웃) 리셀러들을 위한 재고 및 배송관리 서비스"
+    # icon: "/apps/app-icon.png" # public/apps/ 폴더에 아이콘 이미지 추가
+    url: "https://kream-office.polymorph.co.kr/" # 앱 스토어 또는 웹 링크
+    platform: ["web"] # web, ios, android, cross-platform 중 선택
+  - name: "집사요"
+    description: "진짜 실거래가 기반 부동산 정보 서비스"
+    icon: "/apps/jibsayo-logo.png"
+    url: "https://jibsayo.polymorph.co.kr/"
+    platform: ["web"]
+
+# 주요 기술 스택
+techStack:
+  languages: ["TypeScript", "JavaScript", "PHP"]
+  frontend: ["React", "Next.js", "Vue.js"]
+  backend: ["Node.js", "Express", "Laravel"]
+  devops: ["Docker", "AWS", "GCP", "Kubernetes", "ArgoCD", "Jenkins"]
+
+# 팀 멤버
+members:
+  - name: "임흥선"
+    role: "Tech Lead"
+    bio: "풀스택 개발자. 복잡한 시스템을 단순하게 만드는 것을 좋아합니다."
+    avatar: "https://gravatar.com/avatar/41b0c59cf3ffbf6c9941073e7f0bfe9984723a615246b24ca4c05da353b8c2ae?size=256"
+  - name: "박**"
+    role: "Senior Engineer"
+    bio: "빅테크 출신. 대규모 트래픽 처리와 시스템 안정화 전문."
+    avatar: ""
+
+# 프로젝트/포트폴리오
+projects:
+  - name: "ASICS Korea 매장 POS 시스템 최적화"
+    description:
+      [
+        "레거시 코드 분석 및 성능 병목 구간 식별, 응답 속도 10배 개선",
+        "React 컴포넌트 구조 개선으로 렌더링 이슈 해결",
+        "운영팀 대상 기술 문서화 및 교육 진행",
+        "4년간 안정적인 유지보수 운영 (2019-2023)",
+      ]
+    techStack: ["React", "jQuery", "JSP"]
+  - name: "Twinkling 커머스 플랫폼 구축"
+    description:
+      [
+        "주문제작 귀금속 비즈니스를 위한 백오피스 시스템 개발",
+        "베트남 시장 진출을 위한 현지화 쇼핑몰 구축",
+        "내부 운영팀 기술 역량 강화 교육",
+      ]
+    techStack: ["Angular", "Laravel", "PHP"]
+
+# 연락처
+contact:
+  email: "majac6@gmail.com"

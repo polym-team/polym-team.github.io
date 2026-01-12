@@ -1,0 +1,188 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const {
+  title,
+  description = 'Polymorph - 기술로 비즈니스의 형태를 바꾸다. LG, 카카오, 배민 출신 시니어 개발자들의 웹/앱 개발, 레거시 시스템 개선, 기술 컨설팅 서비스.',
+  image = '/logo/logo_polymorph_mint.png',
+  type = 'website'
+} = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Polymorph",
+  "url": "https://polym-team.github.io",
+  "logo": "https://polym-team.github.io/logo/logo_polymorph_mint.png",
+  "description": "LG, 아모레퍼시픽, 카카오, 배민 출신 시니어 개발자들이 만든 개발팀",
+  "foundingDate": "2018",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "majac6@gmail.com",
+    "contactType": "customer service"
+  },
+  "sameAs": [],
+  "serviceArea": {
+    "@type": "Country",
+    "name": "South Korea"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Development Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "웹/앱 개발",
+          "description": "React, Vue, Node.js 등 모던 스택 기반의 확장 가능한 애플리케이션 구축"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "레거시 시스템 개선",
+          "description": "성능 병목 분석, 코드 리팩토링, 아키텍처 현대화"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "기술 컨설팅",
+          "description": "프로젝트 초기 설계부터 기술 스택 선정, 개발 프로세스 구축"
+        }
+      }
+    ]
+  }
+};
+---
+
+<!doctype html>
+<html lang="ko" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="웹개발, 앱개발, React, Vue, Node.js, 기술컨설팅, 레거시시스템, 시스템최적화, 개발외주, 프리랜서개발자" />
+    <meta name="author" content="Polymorph" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="Polymorph" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo/logo_polymorph_mint.png" />
+    <link rel="apple-touch-icon" href="/logo/logo_polymorph_mint.png" />
+
+    <!-- Misc -->
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#14B8A6" />
+
+    <!-- Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <script is:inline>
+      // 초기 테마 설정 (깜빡임 방지)
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    </script>
+  </head>
+  <body class="bg-[var(--color-bg)] text-[var(--color-text)] antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-line)]">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main navigation">
+        <a href="/" class="flex items-center gap-2" aria-label="Polymorph 홈">
+          <img
+            src="/logo/logo_polymorph_mint.png"
+            alt="Polymorph"
+            class="h-10 w-auto"
+            width="40"
+            height="40"
+          />
+        </a>
+
+        <div class="flex items-center gap-4 sm:gap-6">
+          <a href="#about" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors hidden sm:inline">About</a>
+          <a href="#services" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors hidden sm:inline">Services</a>
+          <a href="#apps" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors hidden sm:inline">Apps</a>
+          <a href="#projects" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors hidden sm:inline">Projects</a>
+          <a href="#contact" class="text-sm text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors hidden sm:inline">Contact</a>
+
+          <!-- Theme Toggle -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-lg bg-[var(--color-card)] border border-[var(--color-line)] hover:border-[var(--color-accent)] transition-colors"
+            aria-label="테마 전환"
+          >
+            <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--color-line)] bg-[var(--color-card)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <img src="/logo/logo_polymorph_mint.png" alt="Polymorph" class="h-6 w-auto" width="24" height="24" />
+            <span class="text-sm text-[var(--color-muted)]">Polymorph &copy; 2018 - {new Date().getFullYear()}</span>
+          </div>
+          <nav class="flex items-center gap-4 text-sm text-[var(--color-muted)]" aria-label="Footer navigation">
+            <a href="#about" class="hover:text-[var(--color-accent)] transition-colors">About</a>
+            <a href="#contact" class="hover:text-[var(--color-accent)] transition-colors">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+
+      toggle?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        document.documentElement.classList.remove('dark', 'light');
+        document.documentElement.classList.add(isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      });
+    </script>
+  </body>
+</html>
