@@ -19,7 +19,7 @@ values:
 # 서비스
 works:
   - title: "웹/앱 개발"
-    description: "React, Vue, Node.js 등 모던 스택 기반의 확장 가능한 애플리케이션을 구축합니다."
+    description: "React, Vue, Express, Nestjs 등 모던 스택 기반의 확장 가능한 애플리케이션을 구축합니다."
   - title: "레거시 시스템 개선"
     description: "성능 병목 분석, 코드 리팩토링, 아키텍처 현대화로 기존 시스템의 가치를 높입니다."
   - title: "기술 컨설팅"
