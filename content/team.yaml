@@ -44,13 +44,6 @@ apps:
       "2026년 1월: WEB 서비스 런칭(1.0.0) 서울/경기 지역 대상 오픈",
     ]
 
-# 주요 기술 스택
-techStack:
-  languages: ["TypeScript", "JavaScript", "PHP"]
-  frontend: ["React", "Next.js", "Vue.js"]
-  backend: ["Node.js", "Express", "Laravel"]
-  devops: ["Docker", "AWS", "GCP", "Kubernetes", "ArgoCD", "Jenkins"]
-
 # 팀 멤버
 members:
   - name: "임흥선"
