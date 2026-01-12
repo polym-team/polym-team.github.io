@@ -32,11 +32,17 @@ apps:
     # icon: "/apps/app-icon.png" # public/apps/ 폴더에 아이콘 이미지 추가
     url: "https://kream-office.polymorph.co.kr/" # 앱 스토어 또는 웹 링크
     platform: ["web"] # web, ios, android, cross-platform 중 선택
+    history: [
+      "2025년 6월: WEB 서비스 런칭(1.0.0)",
+    ]
   - name: "집사요"
     description: "진짜 실거래가 기반 부동산 정보 서비스"
     icon: "/apps/jibsayo-logo.png"
     url: "https://jibsayo.polymorph.co.kr/"
     platform: ["web"]
+    history: [
+      "2026년 1월: WEB 서비스 런칭(1.0.0) 서울/경기 지역 대상 오픈",
+    ]
 
 # 주요 기술 스택
 techStack:

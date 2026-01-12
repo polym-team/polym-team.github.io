@@ -141,9 +141,14 @@ const platformIcons: Record<string, string> = {
                   </svg>
                 </div>
                 <p class="text-sm text-[var(--color-muted)] mt-1 line-clamp-2">{app.description}</p>
-                {(Array.isArray(app.platform) ? app.platform : [app.platform]).map((p: string) => (
-                  <span class="inline-block mt-2 mr-1 text-xs px-2 py-0.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] capitalize">{p}</span>
-                ))}
+                {app.history && app.history.length > 0 && (
+                  <p class="text-xs text-[var(--color-muted)] mt-2 opacity-75">{app.history[app.history.length - 1]}</p>
+                )}
+                <div class="mt-2">
+                  {(Array.isArray(app.platform) ? app.platform : [app.platform]).map((p: string) => (
+                    <span class="inline-block mr-1 text-xs px-2 py-0.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] capitalize">{p}</span>
+                  ))}
+                </div>
               </div>
             </a>
           ))}
